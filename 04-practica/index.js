@@ -17,6 +17,7 @@ app.get("/", (req, res) => {
       todas: "/localidades",
       porId: "/localidades/:id",
       buscar: "/localidades/buscar?nombre=adro",
+      buscar: "/localidades/buscar?nombre=Almirante%20Brown",
     },
   });
 });
