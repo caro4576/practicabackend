@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
     endpoints: {
       todas: "/localidades",
       porId: "/localidades/:id",
-      buscar: "/localidades/buscar?nombre=la-plata",
+      buscar: "/localidades/buscar?nombre=adro",
     },
   });
 });
