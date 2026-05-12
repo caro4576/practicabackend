@@ -4,11 +4,11 @@ import fs from "node:fs";
 const app = express();
 const PORT = 3000;
 
-// leer archivo JSON
+
 const data = fs.readFileSync("./cities.json", "utf-8");
 const cities = JSON.parse(data).localidades;
 
-// RUTA RAÍZ
+
 app.get("/", (req, res) => {
   res.status(200).json({
     status: 200,
@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
   });
 });
 
-// TODAS LAS LOCALIDADES
+
 app.get("/localidades", (req, res) => {
   res.status(200).json({
     status: 200,
@@ -30,7 +30,7 @@ app.get("/localidades", (req, res) => {
   });
 });
 
-// BUSCAR POR NOMBRE
+
 app.get("/localidades/buscar", (req, res) => {
   const nombre = req.query.nombre;
 
@@ -52,7 +52,7 @@ app.get("/localidades/buscar", (req, res) => {
   }
 });
 
-// LOCALIDAD POR ID
+
 app.get("/localidades/:id", (req, res) => {
   const id = req.params.id;
 
@@ -74,7 +74,6 @@ app.get("/localidades/:id", (req, res) => {
 
 
 
-// RUTA INEXISTENTE
 app.use((req, res) => {
   res.status(404).json({
     status: 404,
