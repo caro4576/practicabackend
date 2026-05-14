@@ -24,11 +24,18 @@ app.get("/", (req, res) => {
 
 
 app.get("/localidades", (req, res) => {
-  res.status(200).json({
-    status: 200,
-    message: "Listado completo de localidades",
-    data: cities,
-  });
+  if (cities.length > 0) {
+    res.status(200).json({
+      status: 200,
+      message: "Listado completo de localidades",
+      data: cities,
+    });
+  } else {
+    res.status(404).json({
+      status: 404,
+      message: "No se encontraron localidades",
+    });
+  }
 });
 
 
